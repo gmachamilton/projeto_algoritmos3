@@ -6,7 +6,6 @@ from time import perf_counter
 class Controle:
     def __init__(self):
         self.__candidatos = Lista()
-    
     def carregarCandidatos(self,arquivo):        
         with open(arquivo,encoding='latin1') as f:
             for linha in f:
@@ -55,9 +54,9 @@ class Controle:
                                 nome_municipio=l[41].strip('"'),
                                 sit_pleito=l[44].strip('"'),
                                 sit_cand=l[16].strip('"'))
-                #self.__candidatos.inserirOrdenado(cand)
+                self.__candidatos.inserirOrdenado(cand)
                 self.__candidatos.inserir(cand)
-                self.__indiceCand[cand.num_seq] = cand
+                #self.__indiceCand[cand.num_seq] = cand
     
     def carregarBens(self,arquivo):
         with open(arquivo,encoding='latin1') as f:
@@ -99,9 +98,9 @@ class Cronometro:
 
                 
 if __name__ == '__main__':
-    UFs = ["AC","AL","AM","AP","BA","CE","DF","ES","GO","MA",
-          "MG","MS","MT","PA","PB","PE","PI","PR","RJ","RN",
-          "RO","RR","RS","SC","SE","SP","TO"]    
+    UFs = ["AC","AL","AM"]#,"AP","BA","CE","DF","ES","GO","MA",
+          #"MG","MS","MT","PA","PB","PE","PI","PR","RJ","RN",
+          #"RO","RR","RS","SC","SE","SP","TO"]    
     arq_cand = "consulta_cand_2014_{}.txt"
     arq_bem = "bem_candidato_2014_{}.txt"
     ctrl = Controle()

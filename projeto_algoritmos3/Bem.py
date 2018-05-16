@@ -1,5 +1,5 @@
 import locale, textwrap
-locale.setlocale(locale.LC_ALL, 'pt_br.utf-8')
+#locale.setlocale(locale.LC_ALL, 'pt_br.utf-8')#comentario
 
 class Bem:
     def __init__(self, cod_tipo, desc_tipo, descricao, valor):
